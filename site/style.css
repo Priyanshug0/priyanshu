@@ -1,62 +1,68 @@
 body {
-  background: #1e1e28; /* Dark base background */
-  perspective: 1000px; /* Establish 3D perspective */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
 }
 
 .card {
+  width: 80%;
+  max-width: 400px;
+  background: linear-gradient(45deg, #ff3366, #6633cc);
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: rotate(-15deg);
+  animation: float 3s infinite alternate, heartZoom 5s infinite alternate;
+}
+
+.greeting {
+  text-align: center;
+}
+
+.photos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.photo {
+  text-align: center;
+  border-radius: 15px;
+  overflow: hidden;
   position: relative;
-  width: 500px;
-  margin: 50px auto;
-  background: #2d2d3a; /* Slightly lighter card background */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Dark, soft shadow */
-  transform-style: preserve-3d; /* Enable 3D transformations for card elements */
-  animation: hover-tilt 5s ease-in-out infinite; /* Subtle tilt animation */
 }
 
-@keyframes hover-tilt {
-  0% { transform: rotateX(0deg) rotateY(0deg); }
-  50% { transform: rotateX(5deg) rotateY(-5deg); }
-  100% { transform: rotateX(0deg) rotateY(0deg); }
+.photo img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%; /* Circular photo */
-  margin: 0 auto 20px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+.photo p {
+  margin: 10px;
+  padding: 10px;
 }
 
-.card-title {
-  color: #fff; /* White text for contrast */
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  margin: 10px 0;
-  transform: translateZ(10px); /* Slight 3D positioning */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+@keyframes float {
+  0% {
+    transform: rotate(-15deg) translateY(0);
+  }
+  100% {
+    transform: rotate(-15deg) translateY(-10px);
+  }
 }
 
-.card-message {
-  color: #ddd; /* Lighter text for readability */
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: center;
-  margin: 10px 0;
-}
-
-.card-sender {
-  font-style: italic;
-  color: #ccc; /* Silver text for subtle distinction */
-  text-align: center;
-  transform: translateZ(5px); /* Subtle 3D positioning */
-}
-
-/* Additional styling for borders and visual elements */
-.card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Enhanced shadow on hover */
-}
-
-/* Add your preferred styles for borders, diagrams, and other visual elements here */
+@keyframes heartZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
