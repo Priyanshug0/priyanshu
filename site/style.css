@@ -1,12 +1,21 @@
+body {
+  background-color: #f5f5f5; /* Light background for contrast */
+  perspective: 800px; /* Set perspective for 3D effects */
+}
+
 .card {
+  position: relative;
   width: 500px;
   margin: 50px auto;
-  border: 10px solid #f5f5f5; /* Light gray border */
-  padding: 20px;
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  background-color: #fff; /* White background */
-  text-align: center;
+  background-image: linear-gradient(to right, #ffc0cb, #ff69b4); /* Gradient background */
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  transition: all 0.4s ease-in-out; /* Smooth transitions */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Subtle hover effect */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
 .card-photo {
@@ -14,54 +23,31 @@
   height: 200px;
   border-radius: 50%;
   margin: 0 auto 20px;
-  border: 3px solid #007bff; /* Blue border around photo */
+  border: 5px solid #fff; /* Thick white border */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Inner shadow */
 }
 
 .card-title {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
-  color: #007bff; /* Blue title color */
-  margin-bottom: 10px;
+  text-align: center;
+  color: #fff; /* White text for contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow */
+  transform: rotateX(2deg); /* Slight 3D tilt */
 }
 
 .card-message {
   font-size: 18px;
-  line-height: 1.5;
-  color: #333; /* Darker text color */
+  line-height: 1.6;
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 20px;
 }
 
 .card-sender {
   font-style: italic;
+  text-align: center;
+  color: #fff; /* White text */
   margin-top: 20px;
-  font-size: 16px;
-  color: #6c757d; /* Grayish text color */
+  transform: translateZ(5px); /* Slight 3D depth */
 }
-
-/* Additional embellishments */
-.card::before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: calc(100% + 30px);
-  height: calc(100% + 30px);
-  border-radius: 50%;
-  background-color: radial-gradient(circle, #fff 0%, #f5f5f5 50%, #fff 100%); /* Gradient outline */
-}
-
-.card-title::before,
-.card-title::after {
-  content: "";
-  width: 50%;
-  height: 2px;
-  background-color: #007bff; /* Blue lines under title */
-  position: absolute;
-  bottom: -10px;
-}
-
-.card-title::before {
-  left: 0;
-}
-
-.card-title::after {
-  right: 0;.
